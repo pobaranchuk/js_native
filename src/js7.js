@@ -26,7 +26,7 @@ let man1 = {
         age: 50
     }
 };
-
+ //iygiyv
 let man1FullCopy = {...man1, mother: {...man1.mother}}
 
 
