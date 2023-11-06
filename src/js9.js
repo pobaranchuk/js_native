@@ -95,7 +95,6 @@
 // 2(4) -> 2 * 2(3) -> 2 * 2 * 2(2) -> 2 * 2 * 2 * 2(1)
 // let count = 0;
 function pow(x, n) {
-  console.log(++count);
   if (n === 1) {
     return x;
   }
