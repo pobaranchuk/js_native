@@ -39,8 +39,8 @@
 
 // const a = 10; //gLE {foo: Func, foo2: Func, a: 10}
 // const b = 20; //gLE {foo: Func, foo2: Func, a: 10, b: 20}
-// // const c = 50; //gLE {foo: Func, foo2: Func, a: 10, b: 20, c = 50} -> null
-
+// const c = 50; //gLE {foo: Func, foo2: Func, a: 10, b: 20, c = 50} -> null
+//
 // function foo() {
 //   // fooLE{a: 30, b: 40, bar: Func} -> gLE
 //   const a = 30;
@@ -63,26 +63,26 @@
 
 //gLE {} -> null
 // let count = 0;
-// const couterCreator = () => {
-//   //gLE {couterCreator: Func} -> null
-//   //couterCreatorLE1 {count: 0} -> gLE
-//   //couterCreatorLE2 {count: 0} -> gLE
+// const counterCreator = () => {
+//   //gLE {counterCreator: Func} -> null
+//   //counterCreatorLE1 {count: 0} -> gLE
+//   //counterCreatorLE2 {count: 0} -> gLE
 //   let count = 0;
 
 //   return () => {
-//     //{} -> couterCreatorLE1
-//     //{} -> couterCreatorLE2
+//     //{} -> counterCreatorLE1
+//     //{} -> counterCreatorLE2
 //     // let count = 0;
 //     console.log(++count);
 //   };
 // };
 
-// // couterCreator()(); //gLE {couterCreator: Func, couter: Func} -> null
-// // couterCreator()(); //gLE {couterCreator: Func, couter: Func} -> null
-// // couterCreator()(); //gLE {couterCreator: Func, couter: Func} -> null
+// // counterCreator()(); //gLE {counterCreator: Func, counter: Func} -> null
+// // counterCreator()(); //gLE {counterCreator: Func, counter: Func} -> null
+// // counterCreator()(); //gLE {counterCreator: Func, counter: Func} -> null
 
-// const counter = couterCreator();
-// const counter2 = couterCreator();
+// const counter = counterCreator();
+// const counter2 = counterCreator();
 
 // counter();
 // counter();
