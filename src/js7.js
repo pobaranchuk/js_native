@@ -48,7 +48,9 @@ let people = [
 ];
 
 
-let peopleFullCopy = [...people]
+let peopleFullCopy = [people.map((p)=> ({...p}))]
+peopleFullCopy[0].age = 23
+console.log(peopleFullCopy[0].age)
 
 
 // 6 Array of objects inside object
@@ -62,7 +64,9 @@ let man3 = {
     ]
 };
 
-let man3FullCopy = {...man3, friends: [...man3.friends]}
+let man3FullCopy = {...man3, friends: [...man3.friends.map((f) => ({...f}))]}
+man3FullCopy.friends[0].age = 22
+//console.log(man3.friends[0].age)
 
 // 7 Object inside an object, inside an object
 let man4 = {
@@ -251,4 +255,4 @@ let man7FullCopy = {
 }
 
 
-console.log(man7FullCopy.mother.parents[1].favoriteDish)
+//console.log(man7FullCopy.mother.parents[1].favoriteDish)
