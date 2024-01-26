@@ -112,8 +112,8 @@
 //     });
 //   });
 // };
-
-// server = {
+//
+// const server = {
 //   getData() {
 //     return new Promise((res, rej) => {
 //       setTimeout(() => {
@@ -127,7 +127,7 @@
 //     });
 //   },
 // };
-
+//
 // server
 //   .getData()
 //   .then((data) => {

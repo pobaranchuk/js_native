@@ -40,20 +40,24 @@
 // const a = 10; //gLE {foo: Func, foo2: Func, a: 10}
 // const b = 20; //gLE {foo: Func, foo2: Func, a: 10, b: 20}
 // const c = 50; //gLE {foo: Func, foo2: Func, a: 10, b: 20, c = 50} -> null
-//
+
 // function foo() {
 //   // fooLE{a: 30, b: 40, bar: Func} -> gLE
 //   const a = 30;
 //   const b = 40;
 //   console.log(a);
-//   foo2();
 //   const bar = () => {
 //     //{} -> fooLE
-//     console.log(c);
+//     //console.log(c);
+//     const bar2 = () => {
+//       //{} -> fooLE
+//       console.log(c);
+//     };
+//     bar2()
 //   };
 //   bar();
 // }
-
+//
 // foo();
 
 // function foo2() {
@@ -77,6 +81,7 @@
 //   };
 // };
 
+
 // // counterCreator()(); //gLE {counterCreator: Func, counter: Func} -> null
 // // counterCreator()(); //gLE {counterCreator: Func, counter: Func} -> null
 // // counterCreator()(); //gLE {counterCreator: Func, counter: Func} -> null
@@ -93,34 +98,35 @@
 // counter2();
 
 // 2(4) -> 2 * 2(3) -> 2 * 2 * 2(2) -> 2 * 2 * 2 * 2(1)
-// let count = 0;
-function pow(x, n) {
-  if (n === 1) {
-    return x;
-  }
-  return x * pow(x, n - 1);
-}
-
+// function pow(x, n) {
+//   if (n === 1) {
+//     return x;
+//   }
+//   return x * pow(x, n - 1);
+// }
+//
 // console.log(pow(2, 4)); // 16
 
 // faq(5) -> 1 * 2 * 3 * 4 * 5 * 6
 
-function faq(x) {
-  if (x === 1) {
-    return x;
-  }
-  return x * faq(x - 1);
-}
+// function faq(x) {
+//   if (x === 1) {
+//     return x;
+//   }
+//   return x * faq(x - 1);
+// }
 
 // console.log(faq(6));
 
 // fib(6) -> 0 + 1 + 1 + 2 + 3 + 5
 
-function fib(x) {
-  if (x <= 1) {
-    return x;
-  }
-  return fib(x - 1) + fib(x - 2);
-}
+// function fib(x) {
+//   if (x <= 1) {
+//     return x;
+//   }
+//   return fib(x - 1) + fib(x - 2);
+// }
+//
+// console.log(fib(7));
 
-console.log(fib(7));
+

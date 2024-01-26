@@ -63,15 +63,13 @@
 //     console.log(`Start ${this.brand}`);
 //   }
 //   stopEngine = () => {
-//     console.log(`Start ${this.brand}`);
+//     console.log(`Stop ${this.brand}`);
 //   };
 // }
-
+//
 // const car1 = new Car("bmw", 220);
 // const car2 = new Car("kia", 250);
-
-// console.log(car1);
-// console.log(car2);
+//
 // console.log(car2.startEngine === car1.startEngine);
 // console.log(car2.stopEngine === car1.stopEngine);
 
@@ -88,18 +86,9 @@ class Car {
     this.maxSpeed = maxSpeed;
     console.log("constructor from class Car");
   }
-  startEngine() {
-    console.log(`Start ${this.#brand}`);
-  }
-  stopEngine = () => {
-    console.log(`Start ${this.#brand}`);
-  };
   setBrand(value) {
     this.#brand = value;
     return value;
-  }
-  someMethod() {
-    console.log("someMethod");
   }
   getBrand() {
     return this.#brand;
@@ -107,21 +96,10 @@ class Car {
   get brand() {
     return this.#brand;
   }
-
   set brand(value) {
     this.#brand = value;
   }
-  static compareCars(car1, car2) {
-    return car1.maxSpeed > car2.maxSpeed
-      ? `${car1.brand} faster ${car2.brand}`
-      : `${car2.brand} faster ${car1.brand}`;
-  }
 }
-
-const bmw = new Car("bmw", 220);
-const kia = new Car("kia", 250);
-// bmw.compareCars();
-console.log(Car.compareCars(bmw, kia));
 
 class SuperCar extends Car {
   constructor(brand, maxSpeed, canFly) {
@@ -138,4 +116,3 @@ class SuperCar extends Car {
 
 const superBmw = new SuperCar("superBmw", 320, true);
 
-console.log(SuperCar.compareCars(superBmw, bmw));

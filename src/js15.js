@@ -6,7 +6,7 @@
 // с помощью которого был создан обьект
 
 // prototype - ОБЪЕКТ. Функции конструкторы и классы.
-
+//
 // class Car {
 //   constructor(brand, maxSpeed) {
 //     this.brand = brand;
@@ -19,14 +19,12 @@
 //   stopEngine = () => {
 //     console.log(`Start ${this.brand}`);
 //   };
-//   // stopEngine2 = function () {
-//   //   console.log(`Start ${this.brand}`);
-//   // };
-//   // weels = 4;
+//   stopEngine2 = function () {
+//     console.log(`Start ${this.brand}`);
+//   };
 // }
-
 // const car1 = new Car("bmw", 220);
-// const car2 = new Car("kia", 220);
+// const car2 = new Car("audi", 210);
 
 // console.log(car1.brand === car2.brand); // true
 // console.log(car1.startEngine === car2.startEngine); // true
@@ -44,6 +42,7 @@
 // console.log(car2);
 
 // const a = new String("sdf");
+// console.log(a);
 
 // console.log(a.__proto__ === String.prototype);
 
@@ -109,64 +108,60 @@
 // const d = new Number(45);
 // const b = "string";
 // console.log(String.prototype);
+//
+// class Car {
+//   constructor(brand) {
+//     this.brand = brand;
+//   }
+//   startEngine() {
+//     console.log(`Start ${this.brand}`);
+//   }
+//   static compareCars(car1, car2) {
+//     return car1.maxSpeed > car2.maxSpeed
+//       ? `${car1.brand} faster ${car2.brand}`
+//       : `${car2.brand} faster ${car1.brand}`;
+//   }
+// }
+//
+// class SuperCar extends Car {
+//   constructor(brand, canFly) {
+//     super(brand);
+//     this.canFly = canFly;
+//   }
+// }
 
-class Car {
-  constructor(brand) {
-    this.brand = brand;
-  }
-  startEngine() {
-    console.log(`Start ${this.brand}`);
-  }
-  static compareCars(car1, car2) {
-    return car1.maxSpeed > car2.maxSpeed
-      ? `${car1.brand} faster ${car2.brand}`
-      : `${car2.brand} faster ${car1.brand}`;
-  }
-}
+// -------- Реализация наследования в функциях конструкторах -------
 
-console.dir(Car);
-
-class SuperCar extends Car {
-  constructor(brand, canFly) {
-    super(brand);
-    this.canFly = canFly;
-  }
-}
-
-// -------- Реализация наследования в функциях конструкторых -------
-
-function Car1(brand, maxSpeed) {
-  this.brand = brand;
-  this.maxSpeed = maxSpeed;
-}
-
-Car1.prototype.startEngine = function () {
-  console.log(`Start ${this.brand}`);
-};
-Car1.compareCars = function (car1, car2) {
-  return car1.maxSpeed > car2.maxSpeed
-    ? `${car1.brand} faster ${car2.brand}`
-    : `${car2.brand} faster ${car1.brand}`;
-};
-
-function SuperCar1(brand, maxSpeed, canFly) {
-  //{}
-  // this.brand = brand;
-  // this.maxSpeed = maxSpeed;
-  Car1.call(this, brand, maxSpeed);
-  this.canFly = canFly;
-}
-// SuperCar1.prototype = Object.create(Car1.prototype);
+// function Car1(brand, maxSpeed) {
+//   this.brand = brand;
+//   this.maxSpeed = maxSpeed;
+// }
+// Car1.prototype.startEngine = function () {
+//   console.log(`Start ${this.brand}`);
+// };
+// Car1.compareCars = function (car1, car2) {
+//   return car1.maxSpeed > car2.maxSpeed
+//     ? `${car1.brand} faster ${car2.brand}`
+//     : `${car2.brand} faster ${car1.brand}`;
+// };
+// function SuperCar1(brand, maxSpeed, canFly) {
+//   //{}
+//   // this.brand = brand;
+//   // this.maxSpeed = maxSpeed;
+//   Car1.call(this, brand, maxSpeed);
+//   this.canFly = canFly;
+// }
+// // SuperCar1.prototype = Object.create(Car1.prototype);
+// // SuperCar1.__proto__ = Car1;
+//
+// SuperCar1.prototype.__proto__ = Car1.prototype;
+// // SuperCar1.prototype.constructor = SuperCar1;
 // SuperCar1.__proto__ = Car1;
 
-SuperCar1.prototype.__proto__ = Car1.prototype;
-// SuperCar1.prototype.constructor = SuperCar1;
-SuperCar1.__proto__ = Car1;
-
-const scar1 = new SuperCar1("bmw1", 300, true);
-const scar2 = new SuperCar1("bmw2", 330, true);
-
-console.log(scar1);
+// const scar1 = new SuperCar1("bmw1", 300, true);
+// const scar2 = new SuperCar1("bmw2", 330, true);
+//
+// console.log(scar1);
 
 // console.log(new SuperCar1("super bmw", true).startEngine());
 // console.log(SuperCar1.compareCars(scar1, scar2));

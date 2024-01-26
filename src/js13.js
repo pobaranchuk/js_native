@@ -26,23 +26,26 @@
 //   //   console.log(this.name);
 //   // },
 //   showName() {
+//     const a = 1
 //     //this
+//     console.log(this);
 //     (() => {
-//       console.log(this.name);
+//       console.log(this);
 //     })();
+//
 //   },
 // };
-
+//
 // user.showName();
 
 // let car = {
 //   brand: "bmw",
-//   showBrand() {
-//     console.log(this.brand);
+//   showBrand: () => {
+//     console.log(this);
 //   },
 // };
 
-// // car.showBrand();
+// car.showBrand();
 
 // const newCar = car;
 // car = null;
@@ -117,20 +120,20 @@
 // const scooter = {
 //   brand: "yamaha",
 // };
-
+//
 // const motocycle = {
 //   brand: "suzuki",
 // };
-
+//
 // const bmw = {
 //   brand: "bmw",
 //   showBarand() {
 //     console.log(this.brand);
 //   },
 // };
-
+//
 // const foo = bmw.showBarand.bind(scooter);
-// console.dir(foo);
+//
 // foo.call(motocycle);
 
 // const dialer = {
@@ -161,9 +164,9 @@
 //     },
 //   };
 // }
-
+//
 // const obj1 = foo();
-// // obj1.bar();
+// obj1.bar();
 // // obj1.baz();
 
 // const obj2 = foo.call({ x: 30 });
@@ -187,7 +190,8 @@
 
 // bound(); // что выведет? почему?
 
-function User() {
-  console.log(this);
-}
-User.bind({ name: "Hello" })();
+// function User() {
+//   console.log(this);
+// }
+// User.bind({ name: "Hello" })();
+

@@ -88,10 +88,6 @@ import fetch from "node-fetch";
 //     console.log("finally");
 //   }
 // };
-// foo();
-// foo().then(() => {
-//   console.log("2");
-// });
 
 // console.log("1");
 // setTimeout(() => {
@@ -99,7 +95,7 @@ import fetch from "node-fetch";
 // }, 2000);
 // console.log("2");
 
-// const dataFromBing = await fetch("https://bing.com/query=jsddfsf");
+//const dataFromBing = await fetch("https://bing.com/query=jsddfsf");
 
 // all
 
@@ -176,4 +172,14 @@ import fetch from "node-fetch";
 
 // funk().then((data) => {
 //   console.log(data);
-// });
+// }
+//
+//
+async function func() {
+    return "Async"
+}
+func().then((a) => {
+    console.log(a)
+})
+console.log("1")
+console.log("2")
